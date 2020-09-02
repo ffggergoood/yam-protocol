@@ -31,8 +31,8 @@ const Farms: React.FC = () => {
           <Route exact path={path}>
             <PageHeader
               icon={<img src={farmer} height="96" />}
-              subtitle="Earn YAM tokens by providing liquidity."
-              title="Select a farm."
+              subtitle="通过提供流动性赚钱 LEEK 代币"
+              title="选择一个实体资产池"
             />
             <FarmCards />
           </Route>
@@ -49,7 +49,7 @@ const Farms: React.FC = () => {
         }}>
           <Button
             onClick={onPresentWalletProviderModal}
-            text="Unlock Wallet"
+            text="未解锁钱包"
           />
         </div>
       )}

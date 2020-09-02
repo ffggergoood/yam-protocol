@@ -1,3 +1,5 @@
 node_modules
 .env
 wrangler.toml
+
+yam-www/node_modules

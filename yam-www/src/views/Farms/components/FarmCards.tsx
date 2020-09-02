@@ -45,7 +45,7 @@ const FarmCards: React.FC = () => {
         </StyledRow>
       )) : (
           <StyledLoadingWrapper>
-            <Loader text="Loading farms" />
+            <Loader text="加载中..." />
           </StyledLoadingWrapper>
         )}
     </StyledCards>
@@ -107,16 +107,16 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             <CardIcon>{farm.icon}</CardIcon>
             <StyledTitle>{farm.name}</StyledTitle>
             <StyledDetails>
-              <StyledDetail>Deposit {farm.depositToken.toUpperCase()}</StyledDetail>
-              <StyledDetail>Earn {farm.earnToken.toUpperCase()}</StyledDetail>
+              <StyledDetail>抵押 {farm.depositToken.toUpperCase()}</StyledDetail>
+              <StyledDetail>赚取 {farm.earnToken.toUpperCase()}</StyledDetail>
             </StyledDetails>
             <Spacer />
             <StyledHarvestable>
-              {harvestable ? `${numeral(harvestable).format('0.00a')} YAMs ready to harvest.` : undefined}
+              {harvestable ? `${numeral(harvestable).format('0.00a')}  LEEK 已被你赚取。` : undefined}
             </StyledHarvestable>
             <Button
               disabled={!poolActive}
-              text={poolActive ? 'Select' : undefined}
+              text={poolActive ? '选择' : undefined}
               to={`/farms/${farm.id}`}
             >
               {!poolActive && <Countdown date={new Date(startTime * 1000)} renderer={renderer} />}

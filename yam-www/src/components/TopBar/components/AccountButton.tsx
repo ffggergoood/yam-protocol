@@ -29,13 +29,13 @@ const AccountButton: React.FC<AccountButtonProps> = (props) => {
         <Button
           onClick={handleUnlockClick}
           size="sm"
-          text="Unlock Wallet"
+          text="未解锁钱包"
         />
       ) : (
         <Button
           onClick={onPresentAccountModal}
           size="sm"
-          text="My Wallet"
+          text="我的钱包"
         />
       )}
     </StyledAccountButton>

@@ -20,7 +20,7 @@ import useModal from './hooks/useModal'
 
 import FAQ from './views/FAQ'
 import Farms from './views/Farms'
-import Home from './views/Home'
+// import Home from './views/Home'
 
 import theme from './theme'
 
@@ -42,7 +42,8 @@ const App: React.FC = () => {
         <MobileMenu onDismiss={handleDismissMobileMenu} visible={mobileMenu} />
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <Farms />
+            {/* <Home /> */}
           </Route>
           <Route path="/farms">
             <Farms />

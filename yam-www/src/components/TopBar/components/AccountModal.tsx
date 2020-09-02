@@ -31,7 +31,7 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
 
   return (
     <Modal>
-      <ModalTitle text="My Account" />
+      <ModalTitle text="我的账户" />
       <ModalContent>
         <Spacer />
 
@@ -42,7 +42,7 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
             </CardIcon>
             <StyledBalance>
               <Value value={getDisplayBalance(yamV2Balance, 24)} />
-              <Label text="YAMV2 Balance" />
+              <Label text="LEEK 余额" />
             </StyledBalance>
           </StyledBalanceWrapper>
         </div>
@@ -50,18 +50,18 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
         <Spacer />
         <Button
           href={`https://etherscan.io/address/${account}`}
-          text="View on Etherscan"
+          text="在Etherscan上查看"
           variant="secondary"
         />
         <Spacer />
         <Button
           onClick={handleSignOutClick}
-          text="Sign out"
+          text="退出账户"
           variant="secondary"
         />
       </ModalContent>
       <ModalActions>
-        <Button onClick={onDismiss} text="Cancel" />
+        <Button onClick={onDismiss} text="取消" />
       </ModalActions>
     </Modal>
   )

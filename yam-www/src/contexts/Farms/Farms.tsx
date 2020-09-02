@@ -22,6 +22,7 @@ const NAME_FOR_POOL: { [key: string]: string } = {
   lend_pool: 'Aave Agriculture',
   snx_pool: 'Spartan Grounds',
   mkr_pool: 'Maker Range',
+  yushi_pool: '玉石资产池',
 }
 
 const ICON_FOR_POOL: { [key: string]: string } = {
@@ -34,6 +35,7 @@ const ICON_FOR_POOL: { [key: string]: string } = {
   snx_pool: '⚔️',
   mkr_pool: '🐮',
   ycrv_pool: '🌈',
+  yushi_pool: '💸',
 }
 
 const SORT_FOR_POOL: { [key: string]: number } = {
@@ -46,6 +48,7 @@ const SORT_FOR_POOL: { [key: string]: number } = {
   lend_pool: 6,
   snx_pool: 7,
   mkr_pool: 8,
+  yushi_pool: 9,
 }
 
 const Farms: React.FC = ({ children }) => {

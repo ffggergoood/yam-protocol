@@ -51,6 +51,7 @@ export class Contracts {
     this.ycrv = new this.web3.eth.Contract(ERC20Json.abi);
     this.yam = new this.web3.eth.Contract(YAMJson.abi);
 
+
     this.yfi_pool = new this.web3.eth.Contract(YFIPoolJson.abi);
     this.eth_pool = new this.web3.eth.Contract(WETHPoolJson.abi);
     this.ampl_pool = new this.web3.eth.Contract(AMPLPoolJson.abi);
@@ -61,12 +62,14 @@ export class Contracts {
     this.lend_pool = new this.web3.eth.Contract(LENDPoolJson.abi);
     this.snx_pool = new this.web3.eth.Contract(SNXPoolJson.abi);
     this.mkr_pool = new this.web3.eth.Contract(MKRPoolJson.abi);
+    this.yushi_pool = new this.web3.eth.Contract(MKRPoolJson.abi);  // TODO
 
     this.comp = new this.web3.eth.Contract(ERC20Json.abi);
     this.link = new this.web3.eth.Contract(ERC20Json.abi);
     this.lend = new this.web3.eth.Contract(ERC20Json.abi);
     this.snx = new this.web3.eth.Contract(ERC20Json.abi);
     this.mkr = new this.web3.eth.Contract(ERC20Json.abi);
+    this.yushi = new this.web3.eth.Contract(ERC20Json.abi);  // TODO
     this.yam_ycrv_uni_lp = new this.web3.eth.Contract(ERC20Json.abi);
 
     this.erc20 = new this.web3.eth.Contract(ERC20Json.abi);
@@ -112,6 +115,8 @@ export class Contracts {
       { contract: this.comp_pool, json: COMPPoolJson },
       { contract: this.yamV2, json: YAMv2Json },
       { contract: this.yamV2migration, json: YAMv2MigrationJson },
+      // TODO
+      { contract: this.yushi_pool, json: MKRPoolJson },
     ]
 
     contracts.forEach(contract => this.setContractProvider(
@@ -133,6 +138,8 @@ export class Contracts {
     this.uni_fact.options.address = addressMap["uniswapFactoryV2"];
     this.uni_router.options.address = addressMap["UNIRouter"];
     this.yam_ycrv_uni_lp.options.address = addressMap["YAMYCRV"];
+    // TODO
+    this.yushi.options.address = addressMap["YUSHI"];
 
     this.pools = [
       {"tokenAddr": this.yfi.options.address, "poolAddr": this.yfi_pool.options.address},
@@ -143,6 +150,8 @@ export class Contracts {
       {"tokenAddr": this.lend.options.address, "poolAddr": this.lend_pool.options.address},
       {"tokenAddr": this.mkr.options.address, "poolAddr": this.mkr_pool.options.address},
       {"tokenAddr": this.UNIAmpl.options.address, "poolAddr": this.ampl_pool.options.address},
+      // TODO 
+      {"tokenAddr": this.yushi.options.address, "poolAddr": this.yushi_pool.options.address},
     ]
   }
 
@@ -279,7 +288,7 @@ export class Contracts {
             promi.on('receipt', (receipt) => {
               confirmationOutcome = OUTCOMES.RESOLVED;
               resolve(receipt);
-              const anyPromi = promi ;
+              const anyPromi = promi;
               anyPromi.off();
             });
           }

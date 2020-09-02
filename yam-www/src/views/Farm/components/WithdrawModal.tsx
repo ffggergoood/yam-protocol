@@ -42,8 +42,8 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
         symbol={tokenName}
       />
       <ModalActions>
-        <Button text="Cancel" variant="secondary" onClick={onDismiss} />
-        <Button text="Confirm" onClick={() => onConfirm(val)} />
+        <Button text="取消" variant="secondary" onClick={onDismiss} />
+        <Button text="确认" onClick={() => onConfirm(val)} />
       </ModalActions>
     </Modal>
   )

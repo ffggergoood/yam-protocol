@@ -63,6 +63,8 @@ export class Contracts {
     this.snx_pool = new this.web3.eth.Contract(SNXPoolJson.abi);
     this.mkr_pool = new this.web3.eth.Contract(MKRPoolJson.abi);
     this.yushi_pool = new this.web3.eth.Contract(MKRPoolJson.abi);  // TODO
+    this.zhubao_pool = new this.web3.eth.Contract(MKRPoolJson.abi);  // TODO
+
 
     this.comp = new this.web3.eth.Contract(ERC20Json.abi);
     this.link = new this.web3.eth.Contract(ERC20Json.abi);
@@ -70,6 +72,7 @@ export class Contracts {
     this.snx = new this.web3.eth.Contract(ERC20Json.abi);
     this.mkr = new this.web3.eth.Contract(ERC20Json.abi);
     this.yushi = new this.web3.eth.Contract(ERC20Json.abi);  // TODO
+    this.zhubao = new this.web3.eth.Contract(ERC20Json.abi);  // TODO
     this.yam_ycrv_uni_lp = new this.web3.eth.Contract(ERC20Json.abi);
 
     this.erc20 = new this.web3.eth.Contract(ERC20Json.abi);
@@ -117,6 +120,7 @@ export class Contracts {
       { contract: this.yamV2migration, json: YAMv2MigrationJson },
       // TODO
       { contract: this.yushi_pool, json: MKRPoolJson },
+      { contract: this.zhubao_pool, json: MKRPoolJson },
     ]
 
     contracts.forEach(contract => this.setContractProvider(
@@ -140,6 +144,7 @@ export class Contracts {
     this.yam_ycrv_uni_lp.options.address = addressMap["YAMYCRV"];
     // TODO
     this.yushi.options.address = addressMap["YUSHI"];
+    this.zhubao.options.address = addressMap["ZHUBAO"];
 
     this.pools = [
       {"tokenAddr": this.yfi.options.address, "poolAddr": this.yfi_pool.options.address},
@@ -152,6 +157,7 @@ export class Contracts {
       {"tokenAddr": this.UNIAmpl.options.address, "poolAddr": this.ampl_pool.options.address},
       // TODO 
       {"tokenAddr": this.yushi.options.address, "poolAddr": this.yushi_pool.options.address},
+      {"tokenAddr": this.zhubao.options.address, "poolAddr": this.zhubao_pool.options.address},
     ]
   }
 

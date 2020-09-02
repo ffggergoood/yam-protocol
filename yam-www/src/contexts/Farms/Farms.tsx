@@ -23,6 +23,7 @@ const NAME_FOR_POOL: { [key: string]: string } = {
   snx_pool: 'Spartan Grounds',
   mkr_pool: 'Maker Range',
   yushi_pool: '玉石资产池',
+  zhubao_pool: '珠宝资产池',
 }
 
 const ICON_FOR_POOL: { [key: string]: string } = {
@@ -35,7 +36,8 @@ const ICON_FOR_POOL: { [key: string]: string } = {
   snx_pool: '⚔️',
   mkr_pool: '🐮',
   ycrv_pool: '🌈',
-  yushi_pool: '💸',
+  yushi_pool: '🗿',
+  zhubao_pool: '💸',
 }
 
 const SORT_FOR_POOL: { [key: string]: number } = {
@@ -49,6 +51,7 @@ const SORT_FOR_POOL: { [key: string]: number } = {
   snx_pool: 7,
   mkr_pool: 8,
   yushi_pool: 9,
+  zhubao_pool: 10,
 }
 
 const Farms: React.FC = ({ children }) => {
@@ -89,7 +92,7 @@ const Farms: React.FC = ({ children }) => {
           name: NAME_FOR_POOL[poolKey],
           depositToken: tokenKey,
           depositTokenAddress: tokenAddress,
-          earnToken: 'yam',
+          earnToken: 'leek',
           earnTokenAddress: yamAddress,
           icon: ICON_FOR_POOL[poolKey],
           id: tokenKey,

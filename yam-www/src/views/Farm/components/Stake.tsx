@@ -82,20 +82,20 @@ const Stake: React.FC<StakeProps> = ({
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
-            <CardIcon>🌱</CardIcon>
+            <CardIcon>💸</CardIcon>
             <Value value={getDisplayBalance(stakedBalance)} />
-            <Label text={`${tokenName} Staked`} />
+            <Label text={`${tokenName} 被抵押`} />
           </StyledCardHeader>
           <StyledCardActions>
             {!allowance.toNumber() ? (
               <Button
                 disabled={requestedApproval}
                 onClick={handleApprove}
-                text={`Approve ${tokenName}`}
+                text={`授权抵押 ${tokenName}`}
               />
             ) : (
               <>
-                <Button text="Unstake" onClick={onPresentWithdraw} />
+                <Button text="提取" onClick={onPresentWithdraw} />
                 <StyledActionSpacer />
                 {false && (
                   <IconButton onClick={onPresentDeposit}>
